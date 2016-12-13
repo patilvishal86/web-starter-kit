@@ -16,6 +16,14 @@ app.use(require('webpack-dev-middleware')(compiler,{
     publicPath:config.output.publicPath
 }));
 
+app.get('/users',function(req,res){
+res.json([
+{"id": 1,"firstName":24,"lastName":18,"email":"$1.34"},
+{"id": 2,"firstName":28,"lastName":39,"email":"$2.96"},
+{"id": 3,"firstName":44,"lastName":31,"email":"$3.72"}
+]);
+});
+
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '../src/index.html'));
 });
